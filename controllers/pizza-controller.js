@@ -4,6 +4,11 @@ const pizzaController = {
   // get all pizzas
   getAllPizza(req, res) {
     Pizza.find({})
+    //populates comments
+    .populate({
+        path: 'comments',
+        select: '-__v'
+      })
       .then((dbPizzaData) => res.json(dbPizzaData))
       .catch((err) => {
         console.log(err);
