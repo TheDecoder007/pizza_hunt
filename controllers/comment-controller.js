@@ -1,6 +1,5 @@
 const { Comment, Pizza } = require('../models');
 
-
   const commentController = {
     // add comment to pizza
     addComment({ params, body }, res) {
